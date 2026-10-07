@@ -1,0 +1,13 @@
+[project]
+name = "hackathon"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "google-genai>=2.28.0",
+    "langchain>=1.4.3",
+    "langgraph>=1.2.14",
+    "openai>=3.25.0",
+    "pydantic>=2.13.5",
+    "python-dotenv>=1.2.4",
+    "requests>=2.34.2",
+]
