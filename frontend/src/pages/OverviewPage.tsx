@@ -258,7 +258,7 @@ export const OverviewPage: React.FC<OverviewPageProps> = ({ onNavigate }) => {
                 ))
               ) : (
                 <div className="p-8 text-center text-xs text-muted-brown">
-                  <p className="text-forest-700 font-bold mb-1">&check; All ingredient levels are above safety reorder thresholds</p>
+                  <p className="text-forest-700 font-bold mb-1">✓ All ingredient levels are above safety reorder thresholds</p>
                   <span>Stock levels verified from Supabase inventory ledger.</span>
                 </div>
               )}

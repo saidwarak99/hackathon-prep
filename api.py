@@ -135,10 +135,11 @@ else:
         "http://localhost:3000",
         "http://127.0.0.1:3000",
         "http://localhost:8000",
-        "http://127.0.0.1:8000"
+        "http://127.0.0.1:8000",
+        "https://rasai.netlify.app",
     ]
-    # Allow any local port on localhost or 127.0.0.1 for seamless multi-port dev server support
-    origin_regex = r"^https?://(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$"
+    # Allow local ports, Netlify domains, and Render domains
+    origin_regex = r"^https?://(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$|^https://.*\.netlify\.app$|^https://.*\.onrender\.com$"
 
 # In accordance with W3C fetch spec, allow_credentials must be False if wildcard is used
 allow_creds = False if "*" in allowed_origins else True

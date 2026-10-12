@@ -15,8 +15,29 @@ import {
   DatasetListResponse,
   DatasetDetailResponse,
 } from './types';
+function resolveApiBaseUrl(): string {
+  const envUrl = import.meta.env.VITE_API_BASE_URL;
+  if (envUrl && typeof envUrl === 'string' && envUrl.trim()) {
+    return envUrl.trim().replace(/\/$/, '');
+  }
 
-export const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000').replace(/\/$/, '');
+  if (typeof window !== 'undefined') {
+    const customUrl = localStorage.getItem('API_BASE_URL');
+    if (customUrl && customUrl.trim()) {
+      return customUrl.trim().replace(/\/$/, '');
+    }
+
+    // Automatically connect to deployed Render backend when hosted on Netlify or cloud domains
+    const hostname = window.location.hostname;
+    if (hostname && hostname !== 'localhost' && hostname !== '127.0.0.1') {
+      return 'https://hackathon-prep.onrender.com';
+    }
+  }
+
+  return 'http://localhost:8000';
+}
+
+export const API_BASE_URL = resolveApiBaseUrl();
 
 export class ApiError extends Error {
   status: number;
