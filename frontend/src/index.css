@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-sandalwood text-ink antialiased font-sans min-h-screen selection:bg-terracotta-100 selection:text-terracotta-700;
+  }
+
+  h1, h2, h3 {
+    @apply font-serif tracking-tight text-maroon-800;
+  }
+}
+
+/* Custom scrollbars for warm heritage feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #EADBC5;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D9A441;
+}
+
+/* Heritage Card & Container Styling */
+.heritage-card {
+  background: #FFFCF6;
+  border: 1px solid rgba(234, 219, 197, 0.85);
+  box-shadow: 0 4px 14px -2px rgba(100, 30, 36, 0.05), 0 2px 6px -1px rgba(48, 36, 31, 0.03);
+  border-radius: 1rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heritage-card-hover:hover {
+  border-color: rgba(217, 164, 65, 0.6);
+  box-shadow: 0 10px 25px -4px rgba(100, 30, 36, 0.09), 0 4px 10px -2px rgba(48, 36, 31, 0.04);
+  transform: translateY(-1px);
+}
+
+/* Ornamental Engraved Border Pattern (inspired by Indian currency guilloche & borders) */
+.engraved-border-top {
+  position: relative;
+}
+.engraved-border-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #641E24 0%, #B95332 30%, #D9A441 50%, #B95332 70%, #641E24 100%);
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* Subtle Indian Jali / Geometric Watermark Pattern (Opacity 3-5%) */
+.heritage-pattern-bg {
+  background-color: #FFFCF6;
+  background-image: radial-gradient(#D9A441 0.75px, transparent 0.75px), radial-gradient(#641E24 0.75px, #FFFCF6 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  background-blend-mode: multiply;
+}
+
+.jali-subtle-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20z' fill='none' stroke='%23D9A441' stroke-width='0.75' stroke-opacity='0.15'/%3E%3Ccircle cx='20' cy='20' r='5' fill='none' stroke='%23641E24' stroke-width='0.5' stroke-opacity='0.12'/%3E%3C/svg%3E");
+}
+
+/* Ornamental Currency-Style Ribbon */
+.gold-accent-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #D9A441 20%, #B95332 50%, #D9A441 80%, transparent 100%);
+  opacity: 0.6;
+}

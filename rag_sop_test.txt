@@ -1,0 +1,15 @@
+Restaurant: Test Kitchen 47
+Document type: Fictional restaurant SOP
+Document ID: RAG-SOP-TEST-001
+Opening procedure:
+The restaurant opens at 10:00 AM.
+The kitchen temperature log must be checked before food preparation.
+The opening supervisor must record the temperature check.
+Closing procedure:
+The restaurant closes at 10:00 PM.
+The closing supervisor must reconcile the cash register.
+All refrigerators must be checked and recorded before staff leave.
+Food safety:
+Staff must record refrigerator temperatures at opening and closing.
+Any temperature outside the restaurant's approved safety limits must be escalated to the supervisor.
+This test document does not define a numeric safe-temperature threshold.
